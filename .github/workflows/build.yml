@@ -20,6 +20,7 @@ jobs:
         with:
           version: '6.10.1'
           arch: win64_mingw
+          static: false
 
       - name: Configure CMake
         shell: bash
