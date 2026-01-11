@@ -21,6 +21,7 @@ jobs:
           version: '6.10.1'
           arch: win64_mingw
           static: false
+          tools: 'tools_qtdeploy'
 
       - name: Configure CMake
         shell: bash
@@ -40,7 +41,7 @@ jobs:
         shell: bash
         run: |
           cd build
-          "$Qt6_DIR/../../../bin/windeployqt.exe" EnsteinStockManager.exe --qmldir ..
+          windeployqt EnsteinStockManager.exe --qmldir ..
 
       - name: Create Windows ZIP
         shell: bash
