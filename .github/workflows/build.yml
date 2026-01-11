@@ -25,10 +25,13 @@ jobs:
           arch: win64_mingw
 
       - name: Configure CMake
-        run: |
-          mkdir build
-          cd build
-          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+           shell: bash
+       run: |
+       rm -rf build
+       mkdir build
+       cd build
+       cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+
 
       - name: Build
         run: |
