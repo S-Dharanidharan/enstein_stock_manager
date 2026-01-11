@@ -18,7 +18,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Install Qt (shared + qttools)
+      - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
           version: '6.10.1'
@@ -98,6 +98,13 @@ jobs:
           
           # Copy executable
           cp build/EnsteinStockManager AppDir/usr/bin/
+          
+          # Create a simple icon (if you don't have one)
+          # This creates a placeholder PNG icon
+          convert -size 256x256 xc:blue -gravity center \
+            -pointsize 48 -fill white -annotate +0+0 'ESM' \
+            AppDir/usr/share/icons/hicolor/256x256/apps/enstein-stock.png || \
+          echo "P3 256 256 255 0 100 200" > AppDir/usr/share/icons/hicolor/256x256/apps/enstein-stock.ppm
           
           # Create desktop entry
           cat > AppDir/usr/share/applications/enstein-stock.desktop << 'DESKTOP'
