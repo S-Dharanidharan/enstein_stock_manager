@@ -1,0 +1,6 @@
+module Enstein_Stock_Manager
+typeinfo appEnstein_Stock_Manager.qmltypes
+prefer :/qt/qml/Enstein_Stock_Manager/
+Main 254.0 Main.qml
+depends QtQuick
+

@@ -1,0 +1,9 @@
+module Enstein
+linktarget appEnsteinStockplugin
+optional plugin appEnsteinStockplugin
+classname EnsteinPlugin
+typeinfo appEnsteinStock.qmltypes
+prefer :/qt/qml/Enstein/
+Main 254.0 Main.qml
+depends QtQuick
+

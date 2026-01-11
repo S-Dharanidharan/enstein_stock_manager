@@ -1,0 +1,4 @@
+set(__QT_DEPLOY_TARGET_QXlsx_FILE /home/ensteinrobotsystem/DEV_ENVIRONMENT/CODES/NIGHTLY_BUILDS/Enstein_Stock_Manager/build/Desktop_Qt_6_10_1-Debug/QXlsx/QXlsx/libQXlsxQt6.a)
+set(__QT_DEPLOY_TARGET_QXlsx_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_EnsteinStockManager_FILE /home/ensteinrobotsystem/DEV_ENVIRONMENT/CODES/NIGHTLY_BUILDS/Enstein_Stock_Manager/build/Desktop_Qt_6_10_1-Debug/EnsteinStockManager)
+set(__QT_DEPLOY_TARGET_EnsteinStockManager_TYPE EXECUTABLE)

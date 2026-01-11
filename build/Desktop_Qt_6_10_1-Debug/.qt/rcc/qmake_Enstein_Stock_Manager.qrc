@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Enstein_Stock_Manager">
+    <file alias="qmldir">/home/ensteinrobotsystem/DEV_ENVIRONMENT/CODES/NIGHTLY_BUILDS/Enstein_Stock_Manager/build/Desktop_Qt_6_10_1-Debug/Enstein_Stock_Manager/qmldir</file>
+  </qresource>
+</RCC>
+

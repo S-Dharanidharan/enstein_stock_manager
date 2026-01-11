@@ -1,0 +1,824 @@
+{
+    "classes": [
+        {
+            "className": "ExcelTableModel",
+            "lineNumber": 22,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        },
+                        {
+                            "name": "column",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "lineNumber": 38,
+                    "name": "getData",
+                    "returnType": "QVariant"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        },
+                        {
+                            "name": "column",
+                            "type": "int"
+                        },
+                        {
+                            "name": "value",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 39,
+                    "name": "setDataAt",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "lineNumber": 40,
+                    "name": "addRow",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "lineNumber": 41,
+                    "name": "addColumn",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 42,
+                    "name": "clear",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "ExcelTableModel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractTableModel"
+                }
+            ]
+        },
+        {
+            "className": "ExcelHandler",
+            "lineNumber": 48,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "rows",
+                            "type": "int"
+                        },
+                        {
+                            "name": "cols",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 17,
+                    "lineNumber": 72,
+                    "name": "createNew",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "rows",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 18,
+                    "isCloned": true,
+                    "lineNumber": 72,
+                    "name": "createNew",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 19,
+                    "isCloned": true,
+                    "lineNumber": 72,
+                    "name": "createNew",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "rows",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 20,
+                    "lineNumber": 73,
+                    "name": "createStockFile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 21,
+                    "isCloned": true,
+                    "lineNumber": 73,
+                    "name": "createStockFile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "rows",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 22,
+                    "lineNumber": 74,
+                    "name": "createPurchaseFile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 23,
+                    "isCloned": true,
+                    "lineNumber": 74,
+                    "name": "createPurchaseFile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 24,
+                    "isConst": true,
+                    "lineNumber": 75,
+                    "name": "getFileName",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 25,
+                    "isConst": true,
+                    "lineNumber": 76,
+                    "name": "getFileType",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 26,
+                    "lineNumber": 77,
+                    "name": "loadExcel",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 27,
+                    "lineNumber": 78,
+                    "name": "saveExcel",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 28,
+                    "isCloned": true,
+                    "lineNumber": 78,
+                    "name": "saveExcel",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 29,
+                    "lineNumber": 81,
+                    "name": "setPermanentFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 30,
+                    "lineNumber": 82,
+                    "name": "loadPermanentFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 31,
+                    "lineNumber": 83,
+                    "name": "saveToPermanent",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 32,
+                    "lineNumber": 84,
+                    "name": "getSavedPermanentPath",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 33,
+                    "lineNumber": 85,
+                    "name": "hasSavedPermanentFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 34,
+                    "lineNumber": 88,
+                    "name": "appendFromFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 35,
+                    "lineNumber": 89,
+                    "name": "validateFileStructure",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "partName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 36,
+                    "lineNumber": 92,
+                    "name": "searchPartName",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "searchText",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 37,
+                    "lineNumber": 93,
+                    "name": "searchAllMatches",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        },
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 38,
+                    "lineNumber": 96,
+                    "name": "uploadFileForPart",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 39,
+                    "lineNumber": 97,
+                    "name": "getUploadedFilePath",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 40,
+                    "lineNumber": 98,
+                    "name": "openUploadedFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 41,
+                    "lineNumber": 99,
+                    "name": "hasUploadedFile",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "partName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "category",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "quantity",
+                            "type": "int"
+                        },
+                        {
+                            "name": "unitPrice",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 42,
+                    "lineNumber": 102,
+                    "name": "addNewItem",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 43,
+                    "isConst": true,
+                    "lineNumber": 106,
+                    "name": "getNextSerialNumber",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 44,
+                    "lineNumber": 109,
+                    "name": "syncToCloud",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 45,
+                    "lineNumber": 110,
+                    "name": "syncFromCloud",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 46,
+                    "lineNumber": 111,
+                    "name": "checkForUpdates",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 47,
+                    "isConst": true,
+                    "lineNumber": 112,
+                    "name": "getCloudFilePath",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 48,
+                    "isConst": true,
+                    "lineNumber": 113,
+                    "name": "canEdit",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "folder",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 49,
+                    "lineNumber": 114,
+                    "name": "setCloudFolder",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "username",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 50,
+                    "lineNumber": 115,
+                    "name": "setCurrentUser",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "role",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 51,
+                    "lineNumber": 116,
+                    "name": "setUserRole",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "enabled",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 52,
+                    "lineNumber": 117,
+                    "name": "setSyncEnabled",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 51,
+                    "name": "model",
+                    "read": "model",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "ExcelTableModel*",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 52,
+                    "name": "currentFile",
+                    "notify": "currentFileChanged",
+                    "read": "currentFile",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 53,
+                    "name": "hasUnsavedChanges",
+                    "notify": "unsavedChangesChanged",
+                    "read": "hasUnsavedChanges",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 54,
+                    "name": "permanentFile",
+                    "notify": "permanentFileChanged",
+                    "read": "permanentFile",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 57,
+                    "name": "cloudFolder",
+                    "notify": "cloudFolderChanged",
+                    "read": "cloudFolder",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setCloudFolder"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 58,
+                    "name": "syncEnabled",
+                    "notify": "syncEnabledChanged",
+                    "read": "syncEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setSyncEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 59,
+                    "name": "lastSyncTime",
+                    "notify": "lastSyncTimeChanged",
+                    "read": "lastSyncTime",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "lineNumber": 60,
+                    "name": "syncStatus",
+                    "notify": "syncStatusChanged",
+                    "read": "syncStatus",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "lineNumber": 61,
+                    "name": "currentUser",
+                    "notify": "currentUserChanged",
+                    "read": "currentUser",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setCurrentUser"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "lineNumber": 62,
+                    "name": "userRole",
+                    "notify": "userRoleChanged",
+                    "read": "userRole",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setUserRole"
+                }
+            ],
+            "qualifiedClassName": "ExcelHandler",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 128,
+                    "name": "currentFileChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "lineNumber": 129,
+                    "name": "unsavedChangesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "lineNumber": 130,
+                    "name": "permanentFileChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 131,
+                    "name": "errorOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fileName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 132,
+                    "name": "fileLoaded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fileName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 133,
+                    "name": "fileSaved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fileName",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "rowsAdded",
+                            "type": "int"
+                        },
+                        {
+                            "name": "rowsUpdated",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 134,
+                    "name": "fileMerged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "row",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 135,
+                    "name": "searchResultFound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "lineNumber": 138,
+                    "name": "cloudFolderChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "lineNumber": 139,
+                    "name": "syncEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "lineNumber": 140,
+                    "name": "lastSyncTimeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "lineNumber": 141,
+                    "name": "syncStatusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "lineNumber": 142,
+                    "name": "currentUserChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 13,
+                    "lineNumber": 143,
+                    "name": "userRoleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 14,
+                    "lineNumber": 144,
+                    "name": "syncCompleted",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 15,
+                    "lineNumber": 145,
+                    "name": "conflictDetected",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 16,
+                    "lineNumber": 148,
+                    "name": "onModelDataChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "excelhandler.h",
+    "outputRevision": 69
+}
