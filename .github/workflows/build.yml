@@ -21,7 +21,7 @@ jobs:
           version: '6.10.1'
           arch: win64_mingw
           static: false
-          tools: 'tools_qtdeploy'
+          modules: 'qttools'
 
       - name: Configure CMake
         shell: bash
