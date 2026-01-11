@@ -1,15 +1,15 @@
 name: Build Windows and Linux (Qt)
 
-permissions:
-  contents: write
-
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 jobs:
+# ============================================================
+# WINDOWS BUILD
+# ============================================================
   build-windows:
     name: Windows Release
     runs-on: windows-latest
@@ -18,12 +18,14 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Install Qt (shared + qttools)
+      - name: Install Qt (Windows)
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.10.1'
+          version: "6.10.1"
+          host: windows
+          target: desktop
           arch: win64_mingw
-          static: false
+          cache: true
 
       - name: Configure CMake
         shell: bash
@@ -43,14 +45,14 @@ jobs:
         shell: bash
         run: |
           cd build
-          where windeployqt
+          which windeployqt
           windeployqt EnsteinStockManager.exe --qmldir ..
 
       - name: Create Windows ZIP
         shell: bash
         run: |
           cd build
-          powershell -Command "Compress-Archive -Path * -DestinationPath ../EnsteinStockManager-Windows.zip"
+          powershell Compress-Archive -Path * -DestinationPath ../EnsteinStockManager-Windows.zip
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
@@ -58,27 +60,31 @@ jobs:
           name: windows-build
           path: EnsteinStockManager-Windows.zip
 
+# ============================================================
+# LINUX APPIMAGE BUILD
+# ============================================================
   build-linux:
-    name: Linux Release
+    name: Linux AppImage
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Install Qt
+      - name: Install Qt (Linux)
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.10.1'
+          version: "6.10.1"
+          host: linux
           target: desktop
+          cache: true
 
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y libxcb-cursor0
+          sudo apt install -y libxcb-cursor0 libfuse2 wget
 
       - name: Configure CMake
-        shell: bash
         run: |
           rm -rf build
           mkdir build
@@ -86,22 +92,56 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=Release ..
 
       - name: Build
-        shell: bash
         run: |
           cd build
           make -j$(nproc)
 
-      - name: Upload Linux artifact
+      - name: Prepare AppDir
+        run: |
+          mkdir -p AppDir/usr/bin
+          cp build/EnsteinStockManager AppDir/usr/bin/
+
+          mkdir -p AppDir/usr/share/applications
+          cat > AppDir/usr/share/applications/enstein-stock.desktop <<EOF
+          [Desktop Entry]
+          Type=Application
+          Name=Enstein Stock Manager
+          Exec=EnsteinStockManager
+          Icon=enstein
+          Categories=Office;
+          EOF
+
+          mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
+          cp resources/icon.png AppDir/usr/share/icons/hicolor/256x256/apps/enstein.png || true
+
+      - name: Build AppImage
+        run: |
+          wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy*.AppImage
+
+          ./linuxdeploy-x86_64.AppImage \
+            --appdir AppDir \
+            --plugin qt \
+            --output appimage
+
+      - name: Upload Linux AppImage
         uses: actions/upload-artifact@v4
         with:
-          name: linux-build
-          path: build/
+          name: linux-appimage
+          path: Enstein_Stock_Manager-*.AppImage
 
+# ============================================================
+# RELEASE
+# ============================================================
   release:
     name: Create GitHub Release
     needs: [build-windows, build-linux]
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
+
+    permissions:
+      contents: write
 
     steps:
       - name: Download Windows artifact
@@ -109,12 +149,17 @@ jobs:
         with:
           name: windows-build
 
-      - name: Create Release
+      - name: Download Linux AppImage
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-appimage
+
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             EnsteinStockManager-Windows.zip
+            Enstein_Stock_Manager-*.AppImage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
