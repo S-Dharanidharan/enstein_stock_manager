@@ -63,56 +63,44 @@ jobs:
 # ============================================================
 # LINUX APPIMAGE BUILD
 # ============================================================
-  build-linux:
+    build-linux:
     name: Linux AppImage
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Qt (Linux)
+      - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
           version: "6.10.1"
-          host: linux
-          target: desktop
-          cache: true
 
-      - name: Install system dependencies
+      - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y libxcb-cursor0 libfuse2 wget
 
-      - name: Configure CMake
+      - name: Build
         run: |
-          rm -rf build
           mkdir build
           cd build
           cmake -DCMAKE_BUILD_TYPE=Release ..
-
-      - name: Build
-        run: |
-          cd build
           make -j$(nproc)
 
       - name: Prepare AppDir
         run: |
           mkdir -p AppDir/usr/bin
+          mkdir -p AppDir/usr/share/applications
+
           cp build/EnsteinStockManager AppDir/usr/bin/
 
-          mkdir -p AppDir/usr/share/applications
           cat > AppDir/usr/share/applications/enstein-stock.desktop <<EOF
           [Desktop Entry]
           Type=Application
           Name=Enstein Stock Manager
           Exec=EnsteinStockManager
-          Icon=enstein
           Categories=Office;
           EOF
-
-          mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
-          cp resources/icon.png AppDir/usr/share/icons/hicolor/256x256/apps/enstein.png || true
 
       - name: Build AppImage
         run: |
@@ -125,11 +113,12 @@ jobs:
             --plugin qt \
             --output appimage
 
-      - name: Upload Linux AppImage
+      - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
           name: linux-appimage
           path: Enstein_Stock_Manager-*.AppImage
+
 
 # ============================================================
 # RELEASE
