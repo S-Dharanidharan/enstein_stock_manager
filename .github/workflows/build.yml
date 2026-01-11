@@ -40,7 +40,7 @@ jobs:
         shell: bash
         run: |
           cd build
-          "$Qt6_DIR/../../bin/windeployqt.exe" EnsteinStockManager.exe --qmldir ..
+          "$Qt6_DIR/../../../bin/windeployqt.exe" EnsteinStockManager.exe --qmldir ..
 
       - name: Create Windows ZIP
         shell: bash
