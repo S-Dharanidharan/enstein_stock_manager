@@ -47,7 +47,7 @@ jobs:
         shell: bash
         run: |
           cd build
-          powershell Compress-Archive -Path * -DestinationPath ../EnsteinStockManager-Windows.zip
+          powershell -Command "Compress-Archive -Path * -DestinationPath ../EnsteinStockManager-Windows.zip"
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
