@@ -1,5 +1,8 @@
 name: Build Windows and Linux (Qt)
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
